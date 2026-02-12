@@ -1,30 +1,37 @@
 import CustomCursor from "./components/CustomCursor";
 import GlitchText from "./components/GlitchText";
 import ViewfinderFrame from "./components/ViewfinderFrame";
+import Image from "next/image";
 
 export default function Home() {
   const projects = [
     {
       id: "01",
-      title: "NEON_GENESIS",
-      category: "WEB_APP",
+      title: "DEPLOY_STORE",
+      category: "ECOMMERCE",
       description:
-        "Next.js dashboard with brutalist data visualization components.",
+        "Developer-focused ecommerce platform with a Linux terminal-themed interface.",
       coords: "X:45 Y:12",
+      link: "https://deploystore-iota.vercel.app",
+      image: "/deploy.png",
     },
     {
       id: "02",
-      title: "VOID_WALKER",
-      category: "THREE.JS",
-      description: "Interactive 3D experience exploring liminal spaces.",
+      title: "WORK_IN_PROGRESS",
+      category: "CONSTRUCTION",
+      description: "Project under development. System initialization pending.",
       coords: "X:88 Y:90",
+      link: "#",
+      image: null,
     },
     {
       id: "03",
-      title: "ECHO_CHAMBER",
-      category: "AUDIO_VIZ",
-      description: "Real-time audio reactive visualizer using WebAudio API.",
+      title: "COMING_SOON",
+      category: "PENDING",
+      description: "Classified project data. Access restricted until release.",
       coords: "X:12 Y:34",
+      link: "#",
+      image: null,
     },
   ];
 
@@ -86,20 +93,49 @@ export default function Home() {
         <div className="overflow-x-auto pt-8 pb-12 -mx-8 px-8 md:-mx-12 md:px-12 no-scrollbar">
           <div className="flex gap-8 w-max">
             {projects.map((project) => (
-              <div key={project.id} className="w-[85vw] md:w-[600px] shrink-0">
+              <a
+                key={project.id}
+                href={project.link}
+                target={project.link !== "#" ? "_blank" : "_self"}
+                rel={project.link !== "#" ? "noopener noreferrer" : ""}
+                className="w-[85vw] md:w-[600px] shrink-0 block"
+              >
                 <ViewfinderFrame
                   label={`PRJ.${project.id}`}
                   coords={project.coords}
                   className="h-full hover:bg-noir-light transition-colors duration-500"
                 >
                   <div className="aspect-video bg-noir border border-gray-800 mb-6 flex items-center justify-center group overflow-hidden relative">
-                    {/* Placeholder for project image */}
-                    <div className="absolute inset-0 bg-gray-900 group-hover:bg-gray-800 transition-colors duration-500" />
-                    <span className="font-tech text-6xl text-gray-800 group-hover:text-hazard transition-colors duration-300 z-10">
-                      {project.id}
-                    </span>
+                    {/* Project Image or Placeholder */}
+                    {project.image ? (
+                      <div className="absolute inset-0 z-0">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 grayscale-[0.75] group-hover:grayscale-0"
+                        />
+                        <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors duration-500" />
+                      </div>
+                    ) : (
+                      <div className="absolute inset-0 bg-gray-900 group-hover:bg-gray-800 transition-colors duration-500" />
+                    )}
+
+                    <div className="relative z-10">
+                      <span className="font-tech text-6xl text-gray-500 group-hover:text-hazard transition-colors duration-300 relative block">
+                        {project.id}
+                        {/* Glitch Layers */}
+                        <span className="absolute top-0 left-0 -z-10 w-full h-full text-blood opacity-0 group-hover:opacity-70 group-hover:animate-glitch-1 translate-x-[2px]">
+                          {project.id}
+                        </span>
+                        <span className="absolute top-0 left-0 -z-10 w-full h-full text-hazard opacity-0 group-hover:opacity-70 group-hover:animate-glitch-2 -translate-x-[2px]">
+                          {project.id}
+                        </span>
+                      </span>
+                    </div>
+
                     {/* Scan effect on hover */}
-                    <div className="absolute top-0 left-0 w-full h-1 bg-hazard opacity-0 group-hover:opacity-50 group-hover:animate-[scan_2s_linear_infinite]" />
+                    <div className="absolute top-0 left-0 w-full h-1 bg-hazard opacity-0 group-hover:opacity-50 group-hover:animate-[scan_2s_linear_infinite] z-20" />
                   </div>
 
                   <div className="flex justify-between items-end">
@@ -114,15 +150,12 @@ export default function Home() {
                         {project.description}
                       </p>
                     </div>
-                    <a
-                      href="#"
-                      className="font-tech text-xs text-blood hover:text-white transition-colors tracking-widest uppercase border-b border-blood pb-1"
-                    >
+                    <span className="font-tech text-xs text-blood hover:text-white transition-colors tracking-widest uppercase border-b border-blood pb-1">
                       Initialize &gt;
-                    </a>
+                    </span>
                   </div>
                 </ViewfinderFrame>
-              </div>
+              </a>
             ))}
           </div>
         </div>
