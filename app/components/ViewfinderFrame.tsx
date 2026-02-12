@@ -30,13 +30,13 @@ export default function ViewfinderFrame({
       <div className="absolute bottom-0 left-1/2 w-[1px] h-2 bg-hazard/50 -translate-x-1/2" />
 
       {/* Labels */}
-      <div className="absolute -top-3 left-4 bg-noir px-2">
-        <span className="font-tech text-xs text-hazard tracking-widest">
+      <div className="absolute -top-[9px] left-4 bg-noir px-2 z-20">
+        <span className="font-tech text-xs text-hazard tracking-widest leading-none block">
           {label}
         </span>
       </div>
-      <div className="absolute -bottom-3 right-4 bg-noir px-2">
-        <span className="font-tech text-xs text-gray-500 tracking-widest">
+      <div className="absolute -bottom-[9px] right-4 bg-noir px-2 z-20">
+        <span className="font-tech text-xs text-gray-500 tracking-widest leading-none block">
           {coords}
         </span>
       </div>

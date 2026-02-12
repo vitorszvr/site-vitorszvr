@@ -53,7 +53,7 @@ export default function Home() {
       <section className="mb-32 relative z-10">
         <div className="relative">
           <h1 className="font-display text-[15vw] leading-[0.8] tracking-tighter mix-blend-difference text-paper">
-            <GlitchText text="VITOR" />
+            <GlitchText text="vitor" />
           </h1>
           <div className="absolute top-0 right-0 md:top-[20%] md:right-[10%] max-w-xs text-right">
             <p className="font-tech text-sm md:text-base text-gray-400 leading-relaxed mb-6">
@@ -83,7 +83,7 @@ export default function Home() {
         </div>
 
         {/* Scroll Container */}
-        <div className="overflow-x-auto pb-12 -mx-8 px-8 md:-mx-12 md:px-12 no-scrollbar">
+        <div className="overflow-x-auto pt-8 pb-12 -mx-8 px-8 md:-mx-12 md:px-12 no-scrollbar">
           <div className="flex gap-8 w-max">
             {projects.map((project) => (
               <div key={project.id} className="w-[85vw] md:w-[600px] shrink-0">

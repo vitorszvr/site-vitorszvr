@@ -150,3 +150,12 @@ body {
 .animate-glitch-2 {
   animation: glitch-2 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
 }
+
+/* Scrollbar Utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
