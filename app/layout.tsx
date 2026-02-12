@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, JetBrains_Mono } from "next/font/google";
+import { Bodoni_Moda, JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
 const bodoni = Bodoni_Moda({
@@ -10,6 +10,12 @@ const bodoni = Bodoni_Moda({
 
 const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
@@ -28,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bodoni.variable} ${jetbrains.variable} antialiased bg-noir text-paper overflow-x-hidden`}
+        className={`${bodoni.variable} ${jetbrains.variable} ${inter.variable} antialiased bg-noir text-paper overflow-x-hidden`}
       >
         <div className="grain-overlay" />
         <div className="scanlines" />

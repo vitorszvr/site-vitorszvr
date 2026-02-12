@@ -11,6 +11,7 @@
 
   --font-display: var(--font-bodoni);
   --font-tech: var(--font-jetbrains);
+  --font-sans: var(--font-inter);
 }
 
 :root {
@@ -35,6 +36,10 @@ body {
 
 .font-tech {
   font-family: var(--font-tech);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
 }
 
 .label-hazard {

@@ -59,8 +59,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="mb-32 relative z-10">
         <div className="relative">
-          <h1 className="font-display text-[15vw] leading-[0.8] tracking-tighter mix-blend-difference text-paper">
-            <GlitchText text="vitor" />
+          <h1 className="font-sans font-bold text-[15vw] leading-[0.8] tracking-tighter mix-blend-difference text-paper">
+            <GlitchText text="Vitor." />
           </h1>
           <div className="absolute top-0 right-0 md:top-[20%] md:right-[10%] max-w-xs text-right">
             <p className="font-tech text-sm md:text-base text-gray-400 leading-relaxed mb-6">
